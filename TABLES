@@ -1,0 +1,89 @@
+CREATE TABLE Personnel (personnel_id SMALLINT UNSIGNED NOT NULL,
+			nom_de_login VARCHAR(10) NOT NULL,
+			mot_de_passe VARCHAR(12) NOT NULL,
+			niveau_de_securite SMALLINT UNSIGNED NOT NULL,
+			PRIMARY KEY (personnel_id)
+			);
+
+CREATE TABLE Salle    (salle_id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
+			nom_de_salle VARCHAR(20) NOT NULL,
+			description_de_salle VARCHAR(100),
+			PRIMARY KEY (salle_id)
+			);
+
+CREATE TABLE Cours     (cours_id VARCHAR(10) NOT NULL, 
+			nom_de_cours VARCHAR(40) NOT NULL,
+			nombre_dheures SMALLINT UNSIGNED NOT NULL,
+			plan_du_cours VARCHAR(50),
+			description_de_cours VARCHAR(100),
+			PRIMARY KEY (cours_id)
+			);
+
+CREATE TABLE Cours_professeurs
+  		       (cours_id VARCHAR(10) NOT NULL, 
+			personnel_id SMALLINT UNSIGNED NOT NULL,
+			PRIMARY KEY (cours_id, personnel_id)
+			);
+
+CREATE TABLE Emploi
+  		       (emploi_id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
+			nom_de_lemploi VARCHAR(20) NOT NULL,
+			permier_jour DATE NOT NULL,	
+			dernier_jour DATE NOT NULL,
+			nombre_seance SMALLINT UNSIGNED NOT NULL,	
+			duree SMALLINT UNSIGNED NOT NULL,
+			debut_matin TIME NOT NULL,
+			nombre_heure_matin SMALLINT UNSIGNED NOT NULL,
+			debut_midi TIME NOT NULL,
+			nombre_heure_midi SMALLINT UNSIGNED NOT NULL,
+			etat VARCHAR(50),	
+			salle_id SMALLINT UNSIGNED NOT NULL,
+			PRIMARY KEY (emploi_id)
+			);
+
+
+CREATE TABLE Periode
+  		       (periode_id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
+			seance SMALLINT UNSIGNED NOT NULL,	
+			debut TIME NOT NULL,
+			fin TIME NOT NULL ,
+			PRIMARY KEY (periode_id)
+			);
+
+CREATE TABLE Emploi_cours
+  		       (emploi_id SMALLINT UNSIGNED NOT NULL,
+			cours_id VARCHAR(10) NOT NULL, 
+			personnel_id SMALLINT UNSIGNED NOT NULL,
+			PRIMARY KEY (emploi_id,cours_id,personnel_id)
+			);
+
+
+CREATE TABLE Emploi_jour
+  		       (emploi_id SMALLINT UNSIGNED NOT NULL,
+			periode_id SMALLINT UNSIGNED NOT NULL,
+			cours_id VARCHAR(10) NOT NULL, 
+			salle_id SMALLINT UNSIGNED NOT NULL,
+			date DATE NOT NULL ,
+			PRIMARY KEY (date,periode_id)
+			);
+
+CREATE TABLE Agenda
+  		       (agenda_id SMALLINT UNSIGNED NOT NULL,
+			personnel_id SMALLINT UNSIGNED NOT NULL,
+			nom_de_agenda VARCHAR(50) NOT NULL,
+			permier_jour DATE NOT NULL,	
+			dernier_jour DATE NOT NULL,
+			PRIMARY KEY (agenda_id)
+			);
+CREATE TABLE Agenda_jours
+  		       (agenda_id SMALLINT UNSIGNED NOT NULL,
+			date DATE NOT NULL,
+			debut TIME NOT NULL,
+			fin TIME NOT NULL,
+			titre VARCHAR(30) NOT NULL,
+			description VARCHAR(50),
+			PRIMARY KEY (agenda_id,date,debut)
+			);
+
+
+			
