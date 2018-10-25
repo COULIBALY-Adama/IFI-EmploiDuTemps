@@ -56,7 +56,7 @@
                             <ul>
                                 <li><a href="http://localhost/EdT-IFI">EdT-IFI</a></li>
                                 <li><a href="http://localhost/phpinfo.php">phpinfo()</a></li>
-                                <li><a href="http://localhost/phpMyAdmin">phpMyAdmin</a></li>
+                                <li><a href="http://localhost/phpmyadmin">phpMyAdmin</a></li>
                                 <li><a href="http://localhost/test_db.php">Test DB Connection</a></li>
                             </ul>
                         </div>
