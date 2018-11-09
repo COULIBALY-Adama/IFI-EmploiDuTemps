@@ -5,8 +5,8 @@ class DB_Sql {
   /* public: connection parameters */
   var $Host     = "mysql";
   var $Database = "edtifi";
-  var $User     = "root";
-  var $Password = "tiger";
+  var $User     = "admin";
+  var $Password = "ifipassword";
 
   /* public: configuration parameters */
   var $Auto_Free     = 0;     ## Set to 1 for automatic mysql_free_result()
@@ -50,15 +50,15 @@ class DB_Sql {
   }
 
   /* public: connection management */
-  function connect($Database = "", $Host = "", $User = "", $Password = "") {
+  function connect($Database = "edtifi", $Host = "mysql", $User = "admin", $Password = "ifipassword") {
     /* Handle defaults */
-    if ("" == $Database)
+    if ("edtifi" == $Database)
       $Database = $this->Database;
-    if ("" == $Host)
+    if ("mysql" == $Host)
       $Host     = $this->Host;
-    if ("" == $User)
+    if ("admin" == $User)
       $User     = $this->User;
-    if ("" == $Password)
+    if ("ifipassword" == $Password)
       $Password = $this->Password;
 //    if ($this->Debug)
 //      printf("Debug: DB = %s Host = %s User = %s passw = %s <br>\n",$Database,$Host,$User, $Password);
