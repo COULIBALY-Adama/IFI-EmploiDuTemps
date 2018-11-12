@@ -7,7 +7,7 @@ error_reporting (E_ALL ^ E_NOTICE);
 include("./db_mysql.inc");
 
 define("DATABASE_NAME","edtifi");
-define("DATABASE_USER","admin");
+define("DATABASE_USER","root");
 define("DATABASE_PASSWORD","ifipassword");
 define("DATABASE_HOST","mysql");
 

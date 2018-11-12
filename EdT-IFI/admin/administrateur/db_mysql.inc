@@ -5,7 +5,7 @@ class DB_Sql {
   /* public: connection parameters */
   var $Host     = "mysql";
   var $Database = "edtifi";
-  var $User     = "admin";
+  var $User     = "root";
   var $Password = "ifipassword";
 
   /* public: configuration parameters */
@@ -50,13 +50,13 @@ class DB_Sql {
   }
 
   /* public: connection management */
-  function connect($Database = "edtifi", $Host = "mysql", $User = "admin", $Password = "ifipassword") {
+  function connect($Database = "edtifi", $Host = "mysql", $User = "root", $Password = "ifipassword") {
     /* Handle defaults */
     if ("edtifi" == $Database)
       $Database = $this->Database;
     if ("mysql" == $Host)
       $Host     = $this->Host;
-    if ("admin" == $User)
+    if ("root" == $User)
       $User     = $this->User;
     if ("ifipassword" == $Password)
       $Password = $this->Password;
